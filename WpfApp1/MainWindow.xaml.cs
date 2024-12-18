@@ -68,6 +68,11 @@ namespace WpfApp1
 
                 MessageBox.Show("Пользователь зарегистирован");
             }
+            MyFrame.Content = new questionnairePage();
+        }
+        private void Button_Window1_Click(object sender, RoutedEventArgs e)
+        {
+            MyFrame.Content = new Page1();
         }
     }
 }

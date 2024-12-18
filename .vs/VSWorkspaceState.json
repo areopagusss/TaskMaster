@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\WpfApp1"
   ],
-  "SelectedNode": "\\C:\\Users\\User\\Source\\Repos\\TaskMaster",
+  "SelectedNode": "\\WpfApp1\\MainWindow.xaml",
   "PreviewInSolutionExplorer": false
 }
