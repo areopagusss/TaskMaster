@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,6 +29,25 @@ namespace WpfApp1
         private void Button_Save(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Анкета успешно сохранена!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+        private void Button_LoadPhoto(object sender, RoutedEventArgs e)
+        {
+            // Создаем диалоговое окно для выбора файла
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image files (*.png;*.jpeg;*.jpg)|*.png;*.jpeg;*.jpg|All files (*.*)|*.*";
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                // Загружаем выбранное изображение
+                string filePath = openFileDialog.FileName;
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = new System.Uri(filePath, System.UriKind.Absolute);
+                bitmap.EndInit();
+
+                // Отображаем изображение в Image
+                EmployeePhoto.Source = bitmap;
+            }
         }
     }
 }

@@ -5,15 +5,15 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApp1"
-         mc:Ignorable="d"
-    Title="MainWindow" Height="600" Width="1000">
+      mc:Ignorable="d"
+      Title="MainWindow" Height="Auto" Width="Auto">
     <Grid Background="#ffdadada">
         <Border MinWidth="300" Margin="15" Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="20" CornerRadius="20">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel>
-                <TextBlock Text="Task Manager" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" Margin="0 0 0 20"/>
+                <Image Source="/Resources/test.png" Width="200" Height="100" Margin="0 0 0 10" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                 <Grid Margin="0 0 0 1">
                     <Button HorizontalAlignment="Left" Content="Регистрация" Click="Button_RegMain_Click" Style="{StaticResource MaterialDesignFlatButton}"/>
                     <Button HorizontalAlignment="Right" Content="Авторизация"/>
