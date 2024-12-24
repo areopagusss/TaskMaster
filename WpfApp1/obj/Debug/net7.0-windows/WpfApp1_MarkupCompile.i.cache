@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\User\Desktop\WpfApp1 (1)\WpfApp1\WpfApp1\App.xaml
-5-154327132
+5-1125968973
 
-91195404574
+91107682244
 200903394696
-MainWindow.xaml;Page1.xaml;questionnairePage.xaml;RegPage.xaml;Window1.xaml;
+Views\Pages\MainPage.xaml;Views\Pages\QuestionnairePage.xaml;Views\Pages\SignIn.xaml;Views\Pages\SignUp.xaml;Views\Windows\MainWindow.xaml;
 
 True
 

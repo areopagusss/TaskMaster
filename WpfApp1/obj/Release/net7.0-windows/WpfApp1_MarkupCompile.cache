@@ -10,11 +10,11 @@ none
 false
 TRACE;RELEASE;NET;NET7_0;NETCOREAPP
 C:\Users\User\Source\Repos\TaskMaster\WpfApp1\App.xaml
-5-154327132
+10-1280296105
 
-7-1735912177
+121085543960
 200903394696
-MainWindow.xaml;Page1.xaml;questionnairePage.xaml;RegPage.xaml;Window1.xaml;
+MainWindow.xaml;Page1.xaml;questionnairePage.xaml;RegPage.xaml;Views\Pages\MainPage.xaml;Views\Pages\QuestionnairePage.xaml;Views\Pages\SignIn.xaml;Views\Pages\SignUp.xaml;Views\Windows\MainWindow.xaml;Window1.xaml;
 
 True
 

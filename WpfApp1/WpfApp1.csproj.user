@@ -7,33 +7,33 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Page1.xaml.cs">
+    <Compile Update="Views\Pages\MainPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="questionnairePage.xaml.cs">
+    <Compile Update="Views\Pages\SignIn.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="RegPage.xaml.cs">
+    <Compile Update="Views\Pages\QuestionnairePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Window1.xaml.cs">
+    <Compile Update="Views\Pages\SignUp.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="MainWindow.xaml">
+    <Page Update="Views\Pages\MainPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Page1.xaml">
+    <Page Update="Views\Windows\MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="questionnairePage.xaml">
+    <Page Update="Views\Pages\SignIn.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="RegPage.xaml">
+    <Page Update="Views\Pages\QuestionnairePage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Window1.xaml">
+    <Page Update="Views\Pages\SignUp.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
