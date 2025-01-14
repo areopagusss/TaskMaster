@@ -13,7 +13,7 @@
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel>
-                <Image Source="C:\Users\User\Desktop\WpfApp1 (1)\WpfApp1\WpfApp1\Resources\Logo.png" Width="200" Height="100" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <Image Source="C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\Resources\Logo.png" Width="200" Height="100" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                 <Grid Margin="0 0 0 1">
                     <Button HorizontalAlignment="Left" Content="Регистрация"/>
                     <Button HorizontalAlignment="Right" Content="Авторизация" Click="Button_Window1_Click" Style="{StaticResource MaterialDesignFlatButton}"/>

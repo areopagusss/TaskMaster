@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\User\Source\Repos\TaskMaster\WpfApp1\obj\Release\net7.0-windows\
+C:\Users\User\source\repos\TaskMaster\WpfApp1\obj\Release\net7.0-windows\
 WpfApp1
 none
 false
 TRACE;RELEASE;NET;NET7_0;NETCOREAPP
-C:\Users\User\Source\Repos\TaskMaster\WpfApp1\App.xaml
-10-1280296105
+C:\Users\User\source\repos\TaskMaster\WpfApp1\App.xaml
+6-425694489
 
-121085543960
-200903394696
-MainWindow.xaml;Page1.xaml;questionnairePage.xaml;RegPage.xaml;Views\Pages\MainPage.xaml;Views\Pages\QuestionnairePage.xaml;Views\Pages\SignIn.xaml;Views\Pages\SignUp.xaml;Views\Windows\MainWindow.xaml;Window1.xaml;
+839383760
+2042014708518
+Views\Pages\MainPage.xaml;Views\Pages\QuestionnairePage.xaml;Views\Pages\SignIn.xaml;Views\Pages\SignUp.xaml;Views\Pages\Task.xaml;Views\Windows\MainWindow.xaml;
 
 True
 

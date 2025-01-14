@@ -13,7 +13,7 @@
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel>
-                <Image Source="C:\Users\User\Desktop\WpfApp1 (1)\WpfApp1\WpfApp1\Resources\Logo.png" Width="200" Height="100" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <Image Source="C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\Resources\Logo.png" Width="200" Height="100" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                 <TextBlock Text="Анкета Работника" FontSize="24" FontWeight="Bold" HorizontalAlignment="Left"/>
                 <Grid Margin="0">
                     <Grid.ColumnDefinitions>
@@ -24,38 +24,34 @@
                         <ColumnDefinition Width="Auto"/>
                         <!-- Для изображения -->
                     </Grid.ColumnDefinitions>
-                    <TextBox materialDesign:HintAssist.Hint="ФИО" HorizontalAlignment="Left" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="500" Height="50">
+                    <TextBox  x:Name="FullNameTextBox" materialDesign:HintAssist.Hint="ФИО" HorizontalAlignment="Left" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="500" Height="50">
                     </TextBox>
-                    <!--<Image x:Name="EmployeePhoto" Width="100" Height="100" Margin="550 0 0 50"  HorizontalAlignment="Right" 
-                           Stretch="UniformToFill"/>
-                    <Button Content="Загрузить фото" Click="Button_LoadPhoto" Margin="0 10 0 10" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>-->
                     <!-- Изображение и кнопка -->
                     <StackPanel Grid.Column="2" VerticalAlignment="Top" Margin="0 0 0 -80">
                         <Image x:Name="EmployeePhoto"  Width="100" Height="100" Stretch="UniformToFill" HorizontalAlignment="Stretch"/>
-
                         <Button Content="Загрузить фото"  Click="Button_LoadPhoto" Margin="0 10 0 0" HorizontalAlignment="Center"/>
                     </StackPanel>
                 </Grid>
-                <DatePicker materialDesign:HintAssist.Hint="Дата рождения" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="0 10"  HorizontalAlignment="Left" Width="500" Height="50"/>
-                <ComboBox materialDesign:HintAssist.Hint="Пол" 
+                <DatePicker x:Name="BirthDatePicker" materialDesign:HintAssist.Hint="Дата рождения" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="0 10"  HorizontalAlignment="Left" Width="500" Height="50"/>
+                <ComboBox x:Name="GenderComboBox" materialDesign:HintAssist.Hint="Пол" 
                       Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
                       Margin="0 10">
                     <ComboBoxItem>Мужской</ComboBoxItem>
                     <ComboBoxItem>Женский</ComboBoxItem>
                 </ComboBox>
-                <TextBox materialDesign:HintAssist.Hint="Должность" 
+                <TextBox x:Name="PositionTextBox" materialDesign:HintAssist.Hint="Должность" 
                      Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                      Margin="0 10"/>
-                <TextBox materialDesign:HintAssist.Hint="Отдел" 
+                <TextBox x:Name="DepartmentTextBox" materialDesign:HintAssist.Hint="Отдел" 
                      Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                      Margin="0 10"/>
-                <TextBox materialDesign:HintAssist.Hint="Номер телефона" 
+                <TextBox x:Name="PhoneNumberTextBox" materialDesign:HintAssist.Hint="Номер телефона" 
                      Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                      Margin="0 10"/>
 
                 <Button Content="Сохранить Анкету" Margin="0 20" Click="Button_Save"/>
             </StackPanel>
         </Border>
-        <Frame x:Name = "MyFrame"></Frame>
+        <Frame x:Name="MyFrame"></Frame>
     </Grid>
 </Page>

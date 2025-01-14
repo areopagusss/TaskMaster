@@ -83,3 +83,43 @@ C:\Users\User\Desktop\WpfApp1 (1)\WpfApp1\WpfApp1\obj\Debug\net7.0-windows\Views
 C:\Users\User\Desktop\WpfApp1 (1)\WpfApp1\WpfApp1\obj\Debug\net7.0-windows\Views\Pages\SignUp.baml
 C:\Users\User\Desktop\WpfApp1 (1)\WpfApp1\WpfApp1\obj\Debug\net7.0-windows\Views\Pages\MainPage.g.cs
 C:\Users\User\Desktop\WpfApp1 (1)\WpfApp1\WpfApp1\obj\Debug\net7.0-windows\Views\Pages\MainPage.baml
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\bin\Debug\net7.0-windows\WpfApp1.exe
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\bin\Debug\net7.0-windows\WpfApp1.deps.json
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\bin\Debug\net7.0-windows\WpfApp1.runtimeconfig.json
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\bin\Debug\net7.0-windows\WpfApp1.dll
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\bin\Debug\net7.0-windows\WpfApp1.pdb
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\bin\Debug\net7.0-windows\MaterialDesignColors.dll
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\bin\Debug\net7.0-windows\MaterialDesignThemes.Wpf.dll
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\obj\Debug\net7.0-windows\WpfApp1.csproj.AssemblyReference.cache
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\obj\Debug\net7.0-windows\Views\Pages\MainPage.g.cs
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\obj\Debug\net7.0-windows\Views\Pages\QuestionnairePage.g.cs
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\obj\Debug\net7.0-windows\Views\Pages\SignIn.g.cs
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\obj\Debug\net7.0-windows\Views\Pages\SignUp.g.cs
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\obj\Debug\net7.0-windows\Views\Windows\MainWindow.g.cs
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\obj\Debug\net7.0-windows\App.g.cs
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\obj\Debug\net7.0-windows\WpfApp1_MarkupCompile.cache
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\obj\Debug\net7.0-windows\WpfApp1_MarkupCompile.lref
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\obj\Debug\net7.0-windows\App.baml
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\obj\Debug\net7.0-windows\Views\Pages\MainPage.baml
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\obj\Debug\net7.0-windows\Views\Pages\QuestionnairePage.baml
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\obj\Debug\net7.0-windows\Views\Pages\SignIn.baml
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\obj\Debug\net7.0-windows\Views\Pages\SignUp.baml
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\obj\Debug\net7.0-windows\Views\Windows\MainWindow.baml
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\obj\Debug\net7.0-windows\WpfApp1.g.resources
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\obj\Debug\net7.0-windows\WpfApp1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\obj\Debug\net7.0-windows\WpfApp1.AssemblyInfoInputs.cache
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\obj\Debug\net7.0-windows\WpfApp1.AssemblyInfo.cs
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\obj\Debug\net7.0-windows\WpfApp1.csproj.CoreCompileInputs.cache
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\obj\Debug\net7.0-windows\WpfApp1.csproj.CopyComplete
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\obj\Debug\net7.0-windows\WpfApp1.dll
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\obj\Debug\net7.0-windows\refint\WpfApp1.dll
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\obj\Debug\net7.0-windows\WpfApp1.pdb
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\obj\Debug\net7.0-windows\WpfApp1.genruntimeconfig.cache
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\obj\Debug\net7.0-windows\ref\WpfApp1.dll
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\bin\Debug\net7.0-windows\BCrypt.Net-Next.dll
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\bin\Debug\net7.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\bin\Debug\net7.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\bin\Debug\net7.0-windows\MySqlConnector.dll
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\bin\Debug\net7.0-windows\System.Diagnostics.DiagnosticSource.dll
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\obj\Debug\net7.0-windows\Views\Pages\Task.g.cs
+C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\obj\Debug\net7.0-windows\Views\Pages\Task.baml

@@ -70,12 +70,10 @@
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center">
 
-
-
                         </TextBlock>
 
                         <!--// Toggle Button //-->
-                        <Image Source="C:\Users\User\Desktop\WpfApp1 (1)\WpfApp1\WpfApp1\Resources\Logo.png"
+                        <Image Source="C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\Resources\Logo.png"
                                HorizontalAlignment="Center"/>
 
                     </Grid>
@@ -96,7 +94,7 @@
                             <StackPanel Orientation="Horizontal"
                                         Width="230">
 
-                                <Image Source="C:\Users\User\Desktop\WpfApp1 (1)\WpfApp1\WpfApp1\Resources\img_home.png"
+                                <Image Source="C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\Resources\img_home.png"
                                        Stretch="None"
                                        Margin="12,0,0,0"/>
 
@@ -125,7 +123,7 @@
                             <StackPanel Orientation="Horizontal"
                                         Width="230">
 
-                                <Image Source="C:\Users\User\Desktop\WpfApp1 (1)\WpfApp1\WpfApp1\Resources\img_contact.png"
+                                <Image Source="C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\Resources\img_contact.png"
                                        Stretch="None"
                                        Margin="12,0,0,0"/>
 
@@ -154,7 +152,7 @@
                             <StackPanel Orientation="Horizontal"
                                         Width="230">
 
-                                <Image Source="C:\Users\User\Desktop\WpfApp1 (1)\WpfApp1\WpfApp1\Resources\img_message.png"
+                                <Image Source="C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\Resources\img_message.png"
                                        Stretch="None"
                                        Margin="12,0,0,0"/>
 
@@ -174,34 +172,6 @@
 
                         </ListViewItem>
 
-                        <!--// Maps //-->
-
-                        <ListViewItem HorizontalAlignment="Left"
-                                      Margin="0,0,0,15" 
-                                      >
-
-                            <StackPanel Orientation="Horizontal"
-                                        Width="230">
-
-                                <Image Source="C:\Users\User\Desktop\WpfApp1 (1)\WpfApp1\WpfApp1\Resources\img_map.png"
-                                       Stretch="None"
-                                       Margin="12,0,0,0"/>
-
-                                <TextBlock Text="Maps"
-                                           Margin="25,0,0,0"/>
-
-                            </StackPanel>
-
-                            <!--// Tooltip //-->
-
-                            <ListViewItem.ToolTip>
-
-                                <ToolTip x:Name="tt_maps"
-                                         Content="Maps"/>
-
-                            </ListViewItem.ToolTip>
-
-                        </ListViewItem>
 
                         <!--// Settings //-->
 
@@ -212,7 +182,7 @@
                             <StackPanel Orientation="Horizontal"
                                         Width="230">
 
-                                <Image Source="C:\Users\User\Desktop\WpfApp1 (1)\WpfApp1\WpfApp1\Resources\img_setting.png"
+                                <Image Source="C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\Resources\img_setting.png"
                                        Stretch="None"
                                        Margin="12,0,0,0"/>
 
@@ -242,7 +212,7 @@
                                         Width="230"
                                         MouseLeftButtonUp="StackPanel_MouseLeftButtonUp">
 
-                                <Image Source="C:\Users\User\Desktop\WpfApp1 (1)\WpfApp1\WpfApp1\Resources\img_signout.png"
+                                <Image Source="C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\Resources\img_signout.png"
                                        Stretch="None"
                                        Margin="12,0,0,0"/>
 
@@ -277,8 +247,26 @@
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
                 </Border.Effect>
+                <GroupBox Header="Создать задачу">
+                    <StackPanel>
+                        <TextBlock Text="Назначить задачу:"/>
+                        <TextBox x:Name="TaskCheckText" Margin="0,5"/>
+                        <TextBlock Text="Название задачи:"/>
+                        <TextBox x:Name="TaskTitleTextBox" Margin="0,5"/>
+                        <TextBlock Text="Описание задачи:"/>
+                        <TextBox x:Name="TaskDescriptionTextBox" 
+                        Height="60" 
+                        TextWrapping="Wrap"
+                        AcceptsReturn="True"
+                        Margin="0,5"/>
+                        <TextBlock Text="Срок выполнения:"/>
+                        <DatePicker x:Name="TaskDueDatePicker" Margin="0,5"/>
+                        <Button Content="Создать задачу" 
+                        Click="CreateTask_Click"
+                        Margin="0,10"/>
+                    </StackPanel>
+                </GroupBox>
             </Border>
-
         </Grid>
         
         <Frame x:Name = "MyFrame"></Frame>

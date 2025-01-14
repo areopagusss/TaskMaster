@@ -14,4 +14,9 @@ namespace WpfApp1
     public partial class App : Application
     {
     }
+    public static class CurrentUser
+    {
+        public static int UserId { get; set; }
+        public static string Username { get; set; }
+    }
 }

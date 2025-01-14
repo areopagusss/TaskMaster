@@ -1,17 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
+using System.Text.Json;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Threading.Tasks;
+using System.Diagnostics;
+using System.Text.Json.Serialization;
 
 namespace WpfApp1
 {
@@ -20,59 +15,88 @@ namespace WpfApp1
     /// </summary>
     public partial class SignUp : Page
     {
+        private static readonly HttpClient client = new HttpClient();
+
         public SignUp()
         {
             InitializeComponent();
         }
-        private void Button_Reg_Click(object sender, RoutedEventArgs e)
+
+        private async void Button_Reg_Click(object sender, RoutedEventArgs e)
         {
-            string login = TextBoxLogin.Text.Trim();
-            string pass = passBox.Password.Trim();
-            string pass_2 = passBox_2.Password.Trim();
-            string email = TextBoxEmail.Text.Trim().ToLower();
-
-            if (login.Length < 5)
+            try
             {
-                TextBoxLogin.ToolTip = "Логин должен быть больше 5 символов";
-                TextBoxLogin.Background = Brushes.DarkRed;
+                var username = TextBoxLogin.Text;
+                var email = TextBoxEmail.Text;
+                var password = passBox.Password;
+                var confirmPassword = passBox_2.Password;
+
+                // Проверка, что пароли совпадают
+                if (password != confirmPassword)
+                {
+                    MessageBox.Show("Пароли не совпадают.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
+                // Сериализация данных в JSON
+                var json = JsonSerializer.Serialize(new
+                {
+                    Username = username,
+                    Email = email,
+                    Password = password,
+                    ConfirmPassword = confirmPassword
+                });
+
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                // Add this to see what we're sending
+                Debug.WriteLine($"Sending to server: {await content.ReadAsStringAsync()}");
+
+                HttpResponseMessage response = await client.PostAsync("http://192.168.0.5:8080/register", content);
+                var responseContent = await response.Content.ReadAsStringAsync();
+
+                // Add this to see what we're receiving
+                Debug.WriteLine($"Received from server: {responseContent}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    try
+                    {
+                        MessageBox.Show("Регистрация успешна!",
+                                      "Успех",
+                                      MessageBoxButton.OK,
+                                      MessageBoxImage.Information);
+                        MyFrame.Content = new QuestionnairePage();
+                    }
+                    catch (JsonException ex)
+                    {
+                        MessageBox.Show($"Ошибка парсинга JSON:\nПолученные данные: {responseContent}\nОшибка: {ex.Message}",
+                                      "Ошибка JSON",
+                                      MessageBoxButton.OK,
+                                      MessageBoxImage.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show($"Код ответа сервера: {response.StatusCode}\nСодержимое: {responseContent}",
+                                  "Ошибка сервера",
+                                  MessageBoxButton.OK,
+                                  MessageBoxImage.Error);
+                }
             }
-            else if (pass.Length < 5)
+            catch (Exception ex)
             {
-                passBox.ToolTip = "Пароль должен быть больше 5 символов";
-                passBox.Background = Brushes.DarkRed;
-            }
-            else if (pass != pass_2)
-            {
-                passBox_2.ToolTip = "Это поле введено не корректно";
-                passBox_2.Background = Brushes.DarkRed;
-            }
-            else if (email.Length < 5 || !email.Contains("@") || !email.Contains("."))
-            {
-                TextBoxEmail.ToolTip = "Укажите корректную почту";
-                TextBoxEmail.Background = Brushes.DarkRed;
-            }
-            else
-            {
-                TextBoxLogin.ToolTip = "";
-                TextBoxLogin.Background = Brushes.Transparent;
-
-                passBox.ToolTip = "";
-                passBox.Background = Brushes.Transparent;
-
-                passBox_2.ToolTip = "";
-                passBox_2.Background = Brushes.Transparent;
-
-                TextBoxEmail.ToolTip = "";
-                TextBoxEmail.Background = Brushes.Transparent;
-
-                MessageBox.Show("Пользователь зарегистирован");
-
-                MyFrame.Content = new QuestionnairePage();
+                MessageBox.Show($"Произошла ошибка: {ex.Message}",
+                              "Ошибка",
+                              MessageBoxButton.OK,
+                              MessageBoxImage.Error);
             }
         }
+
         private void Button_Window1_Click(object sender, RoutedEventArgs e)
         {
-            MyFrame.Content = new SignIn();
+            // Логика для кнопки (если нужно)
         }
+
     }
 }
