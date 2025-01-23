@@ -1,4 +1,4 @@
-﻿<Page x:Class="WpfApp1.MainPage"
+<Page x:Class="WpfApp1.MainPage"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -6,7 +6,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApp1"
       mc:Ignorable="d" 
-      Title="MainWindow" Height="600" Width="600">
+      Title="MainWindow" Height="auto" Width="auto">
 
 
     <Grid>
@@ -73,7 +73,7 @@
                         </TextBlock>
 
                         <!--// Toggle Button //-->
-                        <Image Source="C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\Resources\Logo.png"
+                        <Image Source="C:\Users\a.karagadyan\Desktop\test (2)\test\WpfApp1\Resources\Logo.png"
                                HorizontalAlignment="Center"/>
 
                     </Grid>
@@ -94,7 +94,7 @@
                             <StackPanel Orientation="Horizontal"
                                         Width="230">
 
-                                <Image Source="C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\Resources\img_home.png"
+                                <Image Source="C:\Users\a.karagadyan\Desktop\test (2)\test\WpfApp1\Resources\img_home.png"
                                        Stretch="None"
                                        Margin="12,0,0,0"/>
 
@@ -123,11 +123,11 @@
                             <StackPanel Orientation="Horizontal"
                                         Width="230">
 
-                                <Image Source="C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\Resources\img_contact.png"
+                                <Image Source="C:\Users\a.karagadyan\Desktop\test (2)\test\WpfApp1\Resources\img_contact.png"
                                        Stretch="None"
                                        Margin="12,0,0,0"/>
 
-                                <TextBlock Text="Contacts"
+                                <TextBlock Text="Profil"
                                            Margin="25,0,0,0"/>
 
                             </StackPanel>
@@ -137,7 +137,7 @@
                             <ListViewItem.ToolTip>
 
                                 <ToolTip x:Name="tt_contacts"
-                                         Content="Contacts"/>
+                                         Content="Profil"/>
 
                             </ListViewItem.ToolTip>
 
@@ -152,7 +152,7 @@
                             <StackPanel Orientation="Horizontal"
                                         Width="230">
 
-                                <Image Source="C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\Resources\img_message.png"
+                                <Image Source="C:\Users\a.karagadyan\Desktop\test (2)\test\WpfApp1\Resources\img_message.png"
                                        Stretch="None"
                                        Margin="12,0,0,0"/>
 
@@ -182,7 +182,7 @@
                             <StackPanel Orientation="Horizontal"
                                         Width="230">
 
-                                <Image Source="C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\Resources\img_setting.png"
+                                <Image Source="C:\Users\a.karagadyan\Desktop\test (2)\test\WpfApp1\Resources\img_setting.png"
                                        Stretch="None"
                                        Margin="12,0,0,0"/>
 
@@ -212,7 +212,7 @@
                                         Width="230"
                                         MouseLeftButtonUp="StackPanel_MouseLeftButtonUp">
 
-                                <Image Source="C:\Users\User\Downloads\TaskMaster-dev\TaskMaster-dev\WpfApp1\Resources\img_signout.png"
+                                <Image Source="C:\Users\a.karagadyan\Desktop\test (2)\test\WpfApp1\Resources\img_signout.png"
                                        Stretch="None"
                                        Margin="12,0,0,0"/>
 
@@ -238,37 +238,82 @@
 
 
             </Grid>
-            <Border MinWidth="510" Margin="13" Background="White" VerticalAlignment="Top" Padding="30" MaxWidth="20" CornerRadius="10" HorizontalAlignment="Right">
+            <Border MinWidth="610" Margin="20" Background="White" VerticalAlignment="Top" Padding="30" MaxWidth="20" CornerRadius="10" HorizontalAlignment="Center">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
                 </Border.Effect>
             </Border>
-            <Border MinWidth="510" Margin="0 90 12 0" Background="White" VerticalAlignment="Top" Padding="30" MaxWidth="20" CornerRadius="10" HorizontalAlignment="Right" Height="485">
+            <Border MinWidth="610" Margin="0 90 0 0" Background="White" VerticalAlignment="Top" Padding="30" MaxWidth="20" CornerRadius="10" HorizontalAlignment="Center" Height="600">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
                 </Border.Effect>
-                <GroupBox Header="Создать задачу">
-                    <StackPanel>
-                        <TextBlock Text="Назначить задачу:"/>
-                        <TextBox x:Name="TaskCheckText" Margin="0,5"/>
-                        <TextBlock Text="Название задачи:"/>
-                        <TextBox x:Name="TaskTitleTextBox" Margin="0,5"/>
-                        <TextBlock Text="Описание задачи:"/>
-                        <TextBox x:Name="TaskDescriptionTextBox" 
-                        Height="60" 
-                        TextWrapping="Wrap"
-                        AcceptsReturn="True"
-                        Margin="0,5"/>
-                        <TextBlock Text="Срок выполнения:"/>
-                        <DatePicker x:Name="TaskDueDatePicker" Margin="0,5"/>
-                        <Button Content="Создать задачу" 
-                        Click="CreateTask_Click"
-                        Margin="0,10"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Row="0" Grid.Column="0" Margin="10">
+                        <TextBlock Text="Текущий пользователь:"/>
+                        <TextBlock x:Name="ReceivedFullNameText" FontSize="16" Margin="0,0,0,10"/>
+                        <TextBlock Text="Должность:"/>
+                        <TextBlock x:Name="ReceivedPositionText" FontSize="16" Margin="0,0,0,10"/>
                     </StackPanel>
-                </GroupBox>
+
+                    <GroupBox Grid.Row="1" Grid.Column="0" Header="Создать задачу" Margin="10">
+                        <StackPanel>
+                            <TextBlock Text="Назначить задачу:"/>
+                            <ComboBox x:Name="AssigneeComboBox" 
+                     DisplayMemberPath="FullName"
+                     Margin="0,5"/>
+                            <TextBlock Text="Название задачи:"/>
+                            <TextBox x:Name="TaskTitleTextBox" Margin="0,5"/>
+                            <TextBlock Text="Описание задачи:"/>
+                            <TextBox x:Name="TaskDescriptionTextBox" 
+                    Height="60" 
+                    TextWrapping="Wrap"
+                    AcceptsReturn="True"
+                    Margin="0,5"/>
+                            <TextBlock Text="Срок выполнения:"/>
+                            <DatePicker x:Name="TaskDueDatePicker" Margin="0,5"/>
+                            <Button Content="Создать задачу" 
+                    Click="CreateTask_Click"
+                    Margin="0,13"/>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <GroupBox Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" 
+              Header="Назначенные задачи" Margin="10">
+                        <ListView x:Name="TasksListView">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                       
+                                        <TextBlock Text="{Binding Title}" FontWeight="Bold"/>
+                                        <TextBlock Text="{Binding Description}"/>
+                                        <TextBlock>
+                            <Run Text="Срок: "/>
+                            <Run Text="{Binding DueDate, StringFormat=dd.MM.yyyy}"/>
+                                        </TextBlock>
+                                        <CheckBox Content="Выполнено" 
+                                 IsChecked="{Binding IsCompleted}"/>
+                                        <TextBlock x:Name="UserFullNameTextBlock" FontSize="14" FontWeight="Bold"/>
+                                        <TextBlock x:Name="UserPositionTextBlock"/>
+                                        <TextBlock x:Name="UserDepartmentTextBlock"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </GroupBox>
+                </Grid>
             </Border>
         </Grid>
         
+        <Frame x:Name = "TaskMain"></Frame>
         <Frame x:Name = "MyFrame"></Frame>
 
     </Grid>
