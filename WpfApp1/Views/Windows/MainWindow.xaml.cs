@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,48 +27,30 @@ namespace WpfApp1
 
         private void Button_Reg_Click(object sender, RoutedEventArgs e)
         {
-            string login = TextBoxLogin.Text.Trim();
-            string pass = passBox.Password.Trim();
-            string pass_2 = passBox_2.Password.Trim();
-            string email = TextBoxEmail.Text.Trim().ToLower();
+            try
+            {
+                var username = TextBoxLogin.Text;
+                var email = TextBoxEmail.Text;
+                var password = passBox.Password;
+                var confirmPassword = passBox_2.Password;
 
-            if(login.Length < 5)
-            {
-                TextBoxLogin.ToolTip = "Логин должен быть больше 5 символов";
-                TextBoxLogin.Background = Brushes.DarkRed;
-            }
-            else if(pass.Length < 5)
-            {
-                passBox.ToolTip = "Пароль должен быть больше 5 символов";
-                passBox.Background = Brushes.DarkRed;
-            }
-            else if (pass != pass_2)
-            {
-                passBox_2.ToolTip = "Это поле введено не корректно";
-                passBox_2.Background = Brushes.DarkRed;
-            }
-            else if (email.Length < 5 || !email.Contains("@") || !email.Contains("."))
-            {
-                TextBoxEmail.ToolTip = "Укажите корректную почту";
-                TextBoxEmail.Background = Brushes.DarkRed;
-            }
-            else
-            {
-                TextBoxLogin.ToolTip = "";
-                TextBoxLogin.Background = Brushes.Transparent;
-                
-                passBox.ToolTip = "";
-                passBox.Background = Brushes.Transparent;
+                // Проверка, что пароли совпадают
+                if (password != confirmPassword)
+                {
+                    MessageBox.Show("Пароли не совпадают.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
 
-                passBox_2.ToolTip = "";
-                passBox_2.Background = Brushes.Transparent;
+                MyFrame.Content = new QuestionnairePage(username, password, email);
 
-                TextBoxEmail.ToolTip = "";
-                TextBoxEmail.Background = Brushes.Transparent;
-
-                MessageBox.Show("Пользователь зарегистирован");
             }
-            MyFrame.Content = new QuestionnairePage();
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Произошла ошибка: {ex.Message}",
+                              "Ошибка",
+                              MessageBoxButton.OK,
+                              MessageBoxImage.Error);
+            }
         }
         private void Button_Window1_Click(object sender, RoutedEventArgs e)
         {
