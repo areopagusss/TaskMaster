@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -7,6 +7,10 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
 using MySqlConnector;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using WpfApp1.Models;
+using WpfApp1.Views.Pages;
 
 namespace WpfApp1
 {
@@ -15,7 +19,7 @@ namespace WpfApp1
     /// </summary>
     public partial class SignIn : Page
     {
-        private const string ConnectionString = "Server=192.168.0.5;Database=project;User ID=root4;Password=000000;";
+        private static readonly HttpClient test = new HttpClient();
         public SignIn()
         {
             InitializeComponent();
@@ -26,62 +30,58 @@ namespace WpfApp1
         }
         private async void Button_Auth_Click(object sender, RoutedEventArgs e)
         {
-            // Получаем введенные данные
-            string username = TextBoxLogin.Text;
-            string password = passBox.Password;
 
-            // Проверяем, что поля не пустые
-            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            var loginData = new
             {
-                MessageBox.Show("Логин и пароль не могут быть пустыми.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
+                Username = TextBoxLogin.Text.Trim(),
+                Password = passBox.Password
+            };
+
+            var json = JsonConvert.SerializeObject(loginData, new JsonSerializerSettings
+            {
+                ContractResolver = new DefaultContractResolver { NamingStrategy = new CamelCaseNamingStrategy() },
+                Formatting = Formatting.Indented
+            });
+
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
 
             try
             {
-                // Подключаемся к базе данных
-                using (var connection = new MySqlConnection(ConnectionString))
+                using (var client = new HttpClient())
                 {
-                    await connection.OpenAsync();
+                    var response = await client.PostAsync("http://192.168.0.78:8080/api/login", content);
+                    var responseContent = await response.Content.ReadAsStringAsync();
 
-                    // Ищем пользователя в базе данных по Username
-                    var query = "SELECT PasswordHash FROM Users WHERE Username = @Username";
-                    using (var command = new MySqlCommand(query, connection))
+                    //Console.WriteLine($"Ответ сервера: {response.StatusCode} - {responseContent}");
+
+                    if (response.IsSuccessStatusCode)
                     {
-                        command.Parameters.AddWithValue("@Username", username);
+                        MessageBox.Show("Вход выполнен!");
+                        var jsonStart = responseContent.IndexOf('{');
+                        var jsonEnd = responseContent.LastIndexOf('}');
 
-                        // Выполняем запрос
-                        using (var reader = await command.ExecuteReaderAsync())
-                        {
-                            if (await reader.ReadAsync())
-                            {
-                                // Получаем хэшированный пароль из базы данных
-                                string hashedPasswordFromDatabase = reader.GetString("PasswordHash");
+                        var json_cut = responseContent.Substring(jsonStart, jsonEnd - jsonStart + 1);
 
-                                // Проверяем пароль
-                                if (BCrypt.Net.BCrypt.Verify(password, hashedPasswordFromDatabase))
-                                {
-                                    MessageBox.Show("Авторизация успешна!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Неверный пароль.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                                }
-                            }
-                            else
-                            {
-                                MessageBox.Show("Пользователь не найден.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                            }
-                        }
+                        var user = JsonConvert.DeserializeObject<User>(json_cut);
+
+
+                        //var user = JsonConvert.DeserializeObject<User>(responseContent);
+
+                        //var userPage = new Profil(user);
+                        //NavigationService.Navigate(userPage);
+                        MyFrame.Content = new Profil(user);
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Ошибка авторизации!");
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка при подключении к базе данных: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Ошибка подключения: {ex.Message}");
             }
         
-            MyFrame.Content = new MainPage();
 
         }
     }
